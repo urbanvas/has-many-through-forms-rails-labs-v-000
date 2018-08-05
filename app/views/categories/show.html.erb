@@ -1,1 +1,6 @@
-<%= link_to @category.name, category_path(@category) %>
+<%= link_to @category.posts.name, category_path(@category.posts) %>
+<ul>
+  <% @category.posts.each do |post| %>
+    <li><%= link_to post.name, post_path(post) %></li>
+  <% end %>
+</ul>
